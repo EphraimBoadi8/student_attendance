@@ -5,37 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>lecturer dashboard</title>
     <link rel="stylesheet" href="lecturer.css">
-
 </head>
 <body>
     <div class="sidebar">
         <h2>Lecturer Dashboard</h2>
         <ul>
-        
             <li onclick="showContent('dashboard')"><a href="#">Dashboard</a></li>
             <li onclick="showContent('mark')"><a href="#">Mark Students attendance</a></li>
             <li onclick="showContent('generate')"><a href="#">generate report</a></li>
-            <li onclick="showContent(' view')"><a href="#">View and edit Attendance</a></li>
-            
+            <li onclick="showContent('view')"><a href="#">View and edit Attendance</a></li>
         </ul>
         <div>
-            <button onclick="window.location.href='/index.html'">Logout</button>
+            <button onclick="window.location.href='index.php'">Logout</button>
         </div>
     </div>
     <div class="mainContent">
         <div class="content" id="dashboard" style="display:block;">
-            <p>high</p>
+            <?php include 'lec_components/dashboard.php'; ?>
         </div>
         <div class="content" id="mark" style="display:none;">
-            <p>hello</p>
+            <?php include 'lec_components/mark_attendance.php'; ?>
         </div>
         <div class="content" id="generate" style="display:none;">
-            <p>great</p>
+            <?php include 'lec_components/generate_report.php'; ?>
         </div>
         <div class="content" id="view" style="display:none;">
-            <p>good</p>
+            <?php include 'lec_components/view_attendance.php'; ?>
         </div>
-
     </div>
     <script>
         function showContent(section){
@@ -62,10 +58,8 @@
                 break;
                 default:
                 document.getElementById('dashboard').style.display='block';
-
             }
         } 
-
     </script>
 </body>
 </html>

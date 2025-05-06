@@ -1,56 +1,53 @@
 *{
     margin: 0;
     padding: 0;
-
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body{
+  min-height: 100vh;
   display: flex;
+  justify-content: center;
   align-items: center;
-    justify-content: center;
-    height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 
 form{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 300px;
-    height: 60vh;
+    background: white;
+    padding: 2rem;
     border-radius: 10px;
-    background-color: #f0f0f0;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    gap: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
 }
 
 .dropdown{
-   display:flex;
-    flex-direction: column;
-
+   margin-bottom: 1.5rem;
 }
 
 .dropdown select{
-    width: 15vw;
-    padding: 10px;
-    margin: 10px 0;
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
     border-radius: 5px;
-    border: 1px solid #ccc;
-
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
 }
 
 .details{
-    display: flex;
-    flex-direction: column;
+    margin-bottom: 1rem;
 }
 
 .details input{
-    width: 15vw;
-    padding: 10px;
-   
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
     border-radius: 5px;
-    border: 1px solid #ccc;
-    outline: none;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
 }
 
 .container{
@@ -60,16 +57,44 @@ form{
 }
 
 button{
-   padding : 10px;
-   background-color: dodgerblue;
+   width: 100%;
+   padding: 0.8rem;
+   background: #667eea;
     color: white;
     border: none;
     cursor: pointer;
-    width: 15vw;
     border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+button:hover{
+    background: #764ba2;
 }
 
 h3{
     text-align: center;
+    color: #333;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
 
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #555;
+    font-weight: 500;
+}
+
+select:focus, input:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+    form {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
 }

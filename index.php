@@ -43,11 +43,11 @@
       const userType = document.getElementById("dropdown").value;
 
       if (userType === "admin") {
-        window.location.href = "admin.html";
+        window.location.href = "admin.php";
       } else if (userType === "student") {
-        window.location.href = "student.html";
+        window.location.href = "student.php";
       } else if (userType === "lecturer") {
-        window.location.href = "lecturer.html";
+        window.location.href = "lecturer.php";
       } else {
         alert("Please select a user type");
       }

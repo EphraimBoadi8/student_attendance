@@ -7,40 +7,25 @@
     <link rel="stylesheet" href="admin.css">
 </head>
 <body>
-    <div class="sidebar">
-        <h2>Admin Dashboard</h2>
-        <ul>
-            <li><a onclick="showContent('dashboard')" href="#">Dashboard</a></li>
-            <li><a onclick="showContent('manage_students')" href="#">manage students</a></li>
-            <li><a onclick="showContent('manage_lecturer')" href="#">manage lecturer</a></li>
-            <li><a onclick="showContent('view_attendance')" href="#">view attendance</a></li>
-            <li><a onclick="showContent('settings')" href="#">settings</a></li>
-        </ul>
-        <div>
-            <button onclick="window.location.href='/index.html'">Logout</button>
-        </div>
-    </div>
+    <?php
+    require_once 'components/sidebar.php';
+    require_once 'components/dashboard.php';
+    require_once 'components/manage_students.php';
+    require_once 'components/manage_lecturers.php';
+    require_once 'components/view_attendance.php';
+    require_once 'components/settings.php';
+
+    renderSidebar();
+    ?>
 
     <div class="main-content">
-        <div class="content" id="dashboard" style="display:block;">
-            <p>high</p>
-        </div>
-
-        <div class="content" id="manage_students" style="display:none;">
-            <p>hello</p>
-        </div>  
-
-        <div class="content" id="manage_lecturers" style="display:none;">
-            <p>great</p>
-        </div>
-
-        <div class="content" id="view_attendance" style="display:none;">
-            <p>good</p>
-        </div>
-
-        <div class="content" id="settings" style="display:none;">
-            <p>settings</p>
-        </div>
+        <?php
+        renderDashboard();
+        renderManageStudents();
+        renderManageLecturers();
+        renderViewAttendance();
+        renderSettings();
+        ?>
     </div>
 
     <script>
@@ -73,7 +58,6 @@
 
                 default:
                 document.getElementById('dashboard').style.display='block';
-
             }
         } 
     </script>
